@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0
 pragma solidity ^0.8.0;
 
-import {SturdyERC4626} from './SturdyERC4626.sol';
-import {SturdyERC20} from './SturdyERC20.sol';
-import {Errors} from '../libraries/Errors.sol';
-import {IERC20} from '../interfaces/IERC20.sol';
-import {SafeERC20} from '../libraries/SafeERC20.sol';
-import {ReentrancyGuard} from '../dependencies/ReentrancyGuard.sol';
-import {IERC20Detailed} from '../interfaces/IERC20Detailed.sol';
-import {IGenericLender} from '../interfaces/IGenericLender.sol';
-import {VersionedInitializable} from '../dependencies/VersionedInitializable.sol';
-import {ILendingPoolAddressesProvider} from '../interfaces/ILendingPoolAddressesProvider.sol';
+import {SturdyERC4626} from '../helpers/tokens/SturdyERC4626.sol';
+import {SturdyERC20} from '../helpers/tokens/SturdyERC20.sol';
+import {Errors} from '../helpers/libraries/Errors.sol';
+import {IERC20} from '../helpers/interfaces/IERC20.sol';
+import {SafeERC20} from '../helpers/libraries/SafeERC20.sol';
+import {ReentrancyGuard} from '../helpers/dependencies/ReentrancyGuard.sol';
+import {IERC20Detailed} from '../helpers/interfaces/IERC20Detailed.sol';
+import {IGenericLender} from '../helpers/interfaces/IGenericLender.sol';
+import {VersionedInitializable} from '../helpers/dependencies/VersionedInitializable.sol';
+import {ILendingPoolAddressesProvider} from '../helpers/interfaces/ILendingPoolAddressesProvider.sol';
 
 contract Aggregator is VersionedInitializable, SturdyERC4626, ReentrancyGuard {
   using SafeERC20 for IERC20;

@@ -1,4 +1,4 @@
-import { ISturdyConfiguration, eEthereumNetwork } from '../../helpers/types';
+import { ISturdyConfiguration, eEthereumNetwork } from '../helpers/types';
 
 // ----------------
 // POOL--SPECIFIC PARAMS

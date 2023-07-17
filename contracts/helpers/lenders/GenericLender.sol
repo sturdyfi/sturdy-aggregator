@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0
 pragma solidity ^0.8.0;
 
-import '../../interfaces/IGenericLender.sol';
-import {SafeERC20} from '../../libraries/SafeERC20.sol';
-import {IERC20} from '../../interfaces/IERC20.sol';
-import {IERC4626} from '../../interfaces/IERC4626.sol';
-import {Errors} from '../../libraries/Errors.sol';
+import '../interfaces/IGenericLender.sol';
+import {SafeERC20} from '../libraries/SafeERC20.sol';
+import {IERC20} from '../interfaces/IERC20.sol';
+import {IERC4626} from '../interfaces/IERC4626.sol';
+import {Errors} from '../libraries/Errors.sol';
 
 abstract contract GenericLender is IGenericLender {
   using SafeERC20 for IERC20;

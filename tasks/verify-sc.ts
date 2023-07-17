@@ -1,5 +1,5 @@
 import { task } from 'hardhat/config';
-import { verifyEtherscanContract, checkVerification } from '../../helpers/etherscan-verification';
+import { verifyEtherscanContract, checkVerification } from '../helpers/etherscan-verification';
 interface VerifyParams {
   contractName: string;
   address: string;

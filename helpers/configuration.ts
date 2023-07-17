@@ -1,7 +1,7 @@
 import {
   PoolConfiguration,
 } from './types';
-import SturdyConfig from '../markets/sturdy';
+import SturdyConfig from '../markets';
 
 export enum ConfigNames {
   Commons = 'Commons',

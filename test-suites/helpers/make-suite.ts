@@ -3,25 +3,25 @@ import {
   evmSnapshot,
   DRE,
   impersonateAccountsHardhat,
-} from '../../../helpers/misc-utils';
+} from '../../helpers/misc-utils';
 import { Signer } from 'ethers';
 import {
   getLendingPoolAddressesProvider,
-} from '../../../helpers/contracts-getters';
-import { eNetwork, ISturdyConfiguration, tEthereumAddress } from '../../../helpers/types';
+} from '../../helpers/contracts-getters';
+import { eNetwork, ISturdyConfiguration, tEthereumAddress } from '../../helpers/types';
 
 import chai from 'chai';
 // @ts-ignore
 import bignumberChai from 'chai-bignumber';
-import { LendingPoolAddressesProvider } from '../../../types';
-import { getEthersSigners } from '../../../helpers/contracts-helpers';
-import { getParamPerNetwork } from '../../../helpers/contracts-helpers';
+import { LendingPoolAddressesProvider } from '../../types';
+import { getEthersSigners } from '../../helpers/contracts-helpers';
+import { getParamPerNetwork } from '../../helpers/contracts-helpers';
 import { solidity } from 'ethereum-waffle';
 import { HardhatRuntimeEnvironment } from 'hardhat/types';
-import { ConfigNames, loadPoolConfig } from '../../../helpers/configuration';
+import { ConfigNames, loadPoolConfig } from '../../helpers/configuration';
 import { parseEther } from '@ethersproject/units';
-import { IERC20Detailed } from '../../../types';
-import { IERC20Detailed__factory } from '../../../types';
+import { IERC20Detailed } from '../../types';
+import { IERC20Detailed__factory } from '../../types';
 
 chai.use(bignumberChai());
 chai.use(solidity);

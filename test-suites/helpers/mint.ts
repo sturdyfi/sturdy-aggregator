@@ -1,5 +1,5 @@
-import { getMintableERC20 } from '../../../helpers/contracts-getters';
-import { DRE, impersonateAccountsHardhat, waitForTx } from '../../../helpers/misc-utils';
+import { getMintableERC20 } from '../../helpers/contracts-getters';
+import { DRE, impersonateAccountsHardhat, waitForTx } from '../../helpers/misc-utils';
 import { SignerWithAddress } from './make-suite';
 
 const USDC = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48';

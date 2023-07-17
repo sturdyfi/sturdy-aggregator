@@ -1,7 +1,7 @@
 import { task } from 'hardhat/config';
-import { checkVerification } from '../../helpers/etherscan-verification';
-import { ConfigNames } from '../../helpers/configuration';
-import { printContracts } from '../../helpers/misc-utils';
+import { checkVerification } from '../helpers/etherscan-verification';
+import { ConfigNames } from '../helpers/configuration';
+import { printContracts } from '../helpers/misc-utils';
 
 task('sturdy:mainnet', 'Deploy development enviroment')
   .addFlag('verify', 'Verify contracts at Etherscan')
@@ -17,7 +17,7 @@ task('sturdy:mainnet', 'Deploy development enviroment')
 
     console.log('Migration started\n');
 
-    console.log('1. Deploy address provider');
+    console.log('Deploy address provider');
     await DRE.run('full:deploy-address-provider', { pool: POOL_NAME, skipRegistry, verify });
 
     // if (verify) {

@@ -3,12 +3,12 @@ import {
   cloneFraxLender,
   deployAggregator,
   deployFraxLender,
-} from '../../helpers/contracts-deployments';
-import { Aggregator, FraxLender } from '../../types';
-import { ZERO_ADDRESS } from '../../helpers/constants';
-import { convertToCurrencyDecimals } from '../../helpers/contracts-helpers';
+} from '../helpers/contracts-deployments';
+import { Aggregator, FraxLender } from '../types';
+import { ZERO_ADDRESS } from '../helpers/constants';
+import { convertToCurrencyDecimals } from '../helpers/contracts-helpers';
 import { mint } from './helpers/mint';
-import { advanceBlock, timeLatest } from '../../helpers/misc-utils';
+import { advanceBlock, timeLatest } from '../helpers/misc-utils';
 import { parseEther } from 'ethers/lib/utils';
 
 const { expect } = require('chai');

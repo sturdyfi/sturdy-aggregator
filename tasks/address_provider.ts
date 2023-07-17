@@ -1,10 +1,10 @@
 import { task } from 'hardhat/config';
-import { deployLendingPoolAddressesProvider } from '../../helpers/contracts-deployments';
+import { deployLendingPoolAddressesProvider } from '../helpers/contracts-deployments';
 import {
   ConfigNames,
-} from '../../helpers/configuration';
-import { getEthersSigners } from '../../helpers/contracts-helpers';
-import { waitForTx } from '../../helpers/misc-utils';
+} from '../helpers/configuration';
+import { getEthersSigners } from '../helpers/contracts-helpers';
+import { waitForTx } from '../helpers/misc-utils';
 
 task(
   'full:deploy-address-provider',

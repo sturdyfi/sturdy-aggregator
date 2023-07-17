@@ -1,7 +1,7 @@
 {
-  "name": "@sturdy/protocol-v1",
-  "version": "1.0.1",
-  "description": "Sturdy Protocol V1 smart contracts",
+  "name": "@sturdy/aggregator-v1",
+  "version": "1.0.0",
+  "description": "Sturdy Aggregator V1 smart contracts",
   "files": [
     "contracts",
     "artifacts"
@@ -10,7 +10,7 @@
     "hardhat": "hardhat",
     "hardhat:main": "hardhat --network main",
     "compile": "SKIP_LOAD=true hardhat compile",
-    "test": "rm -f deployed-contracts.json && npm run compile && npm run sturdy:evm:fork:mainnet:migration && FORK=main SKIP_DEPLOY=true TS_NODE_TRANSPILE_ONLY=1 hardhat test ./test-suites/test-sturdy/*.spec.ts --network localhost",
+    "test": "rm -f deployed-contracts.json && npm run compile && npm run sturdy:evm:fork:mainnet:migration && FORK=main SKIP_DEPLOY=true TS_NODE_TRANSPILE_ONLY=1 hardhat test ./test-suites/*.spec.ts --network localhost",
     "sturdy:evm:fork:mainnet:migration": "FORK=main hardhat sturdy:mainnet --network localhost"
   },
   "devDependencies": {
@@ -55,14 +55,6 @@
     "typescript": "^4.9.4"
   },
   "author": "Sturdy",
-  "contributors": [
-    "Ernesto Boado <ernesto@sturdy.com>",
-    "Emilio Frangella <emilio@sturdy.com>",
-    "Andrey Kozlov <andrey@sturdy.com>",
-    "David Racero <david.k@sturdy.com>",
-    "Pol Sendra <pol@sturdy.com>",
-    "David Truong <david@sturdy.com>"
-  ],
   "license": "AGPLv3",
   "dependencies": {
     "@balancer-labs/v2-interfaces": "^0.4.0",
@@ -76,7 +68,7 @@
   "keywords": [
     "sturdy",
     "protocol",
-    "protocol-v1",
+    "aggregator-v1",
     "ethereum",
     "solidity"
   ]
