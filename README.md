@@ -1,3 +1,13 @@
+# Fraxlend Autopilot
+Fraxlend Autopilot ('Autopilot') is a yield aggregator for Fraxlend built using Yearn V2. Users can deposit FRAX to the vault, and Autopilot automatically distributes assets to maximize yield. Unlike existing products, this distribution is done permissionlessly on-chain: any user can call `adjustPosition` to automatically allocate assets in the vault among Fraxlend markets. `adjustPosition` works by moving assets from lowest return to highest, taking into account the change in yield after depositing.
+
+The vault has an admin role who can whitelist Fraxlend markets and set a cap for each market. For example, Autopilot could be used to manage the Fraxlend AMO according to the per-market caps set out by governance.
+
+### Next steps
+We want to take Autopilot further, by creating a competitive market for proposing new asset allocations via ZK proofs. While the current `adjustPosition` function is useful, it is not 100% optimal. We want to change this, by enabling any user to propose a new distribution of assets among Fraxlend markets. If this distribution results in a higher overall yield (as confirmed by a ZK proof), the vault will shuffle assets accordingly. Additionally, we want to upgrade Autopilot to Yearn V3 to improve composability.
+
+After these improvements, we plan to get at least two audits for Autopilot.
+
 # Dev Environment
 - Configure environment file (.env)
 ```
@@ -24,7 +34,7 @@ FORK=main yarn hardhat node
 yarn test
 ```
 
-# Aggregator
+# Specification
 
 ## User Action
 
