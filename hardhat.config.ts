@@ -34,12 +34,14 @@ const UNLIMITED_BYTECODE_SIZE = process.env.UNLIMITED_BYTECODE_SIZE === 'true';
 const FORK = process.env.FORK || 'main';
 
 // Prevent to load scripts before compilation and typechain
-const tasksPath = path.join(__dirname, 'tasks');
-fs.readdirSync(tasksPath)
-  .filter((pth) => pth.includes('.ts'))
-  .forEach((task) => {
-    require(`${tasksPath}/${task}`);
-  });
+if (!SKIP_LOAD) {
+  const tasksPath = path.join(__dirname, 'tasks');
+  fs.readdirSync(tasksPath)
+    .filter((pth) => pth.includes('.ts'))
+    .forEach((task) => {
+      require(`${tasksPath}/${task}`);
+    });
+}
 
 const getCommonNetworkConfig = (networkName: eNetwork, networkId: number) => ({
   url: NETWORKS_RPC_URL[networkName],
