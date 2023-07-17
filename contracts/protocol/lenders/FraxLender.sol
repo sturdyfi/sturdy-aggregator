@@ -2,9 +2,9 @@
 pragma solidity ^0.8.0;
 
 import './GenericLender.sol';
-import {SafeERC20} from '../../../dependencies/openzeppelin/contracts/SafeERC20.sol';
-import {IERC20} from '../../../dependencies/openzeppelin/contracts/IERC20.sol';
-import {Errors} from '../../libraries/helpers/Errors.sol';
+import {SafeERC20} from '../../libraries/SafeERC20.sol';
+import {IERC20} from '../../interfaces/IERC20.sol';
+import {Errors} from '../../libraries/Errors.sol';
 
 interface IFraxlendPair {
   function currentRateInfo()

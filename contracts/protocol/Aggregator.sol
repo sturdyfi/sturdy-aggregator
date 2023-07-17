@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0
 pragma solidity ^0.8.0;
 
-import {SturdyERC4626} from '../tokenization/SturdyERC4626.sol';
-import {SturdyERC20} from '../tokenization/SturdyERC20.sol';
-import {Errors} from '../libraries/helpers/Errors.sol';
-import {IERC20} from '../../dependencies/openzeppelin/contracts/IERC20.sol';
-import {SafeERC20} from '../../dependencies/openzeppelin/contracts/SafeERC20.sol';
-import {ReentrancyGuard} from '../../dependencies/openzeppelin/contracts/ReentrancyGuard.sol';
-import {IERC20Detailed} from '../../dependencies/openzeppelin/contracts/IERC20Detailed.sol';
-import {IGenericLender} from './lenders/IGenericLender.sol';
-import {VersionedInitializable} from '../../protocol/libraries/sturdy-upgradeability/VersionedInitializable.sol';
-import {ILendingPoolAddressesProvider} from '../../interfaces/ILendingPoolAddressesProvider.sol';
+import {SturdyERC4626} from './SturdyERC4626.sol';
+import {SturdyERC20} from './SturdyERC20.sol';
+import {Errors} from '../libraries/Errors.sol';
+import {IERC20} from '../interfaces/IERC20.sol';
+import {SafeERC20} from '../libraries/SafeERC20.sol';
+import {ReentrancyGuard} from '../dependencies/ReentrancyGuard.sol';
+import {IERC20Detailed} from '../interfaces/IERC20Detailed.sol';
+import {IGenericLender} from '../interfaces/IGenericLender.sol';
+import {VersionedInitializable} from '../dependencies/VersionedInitializable.sol';
+import {ILendingPoolAddressesProvider} from '../interfaces/ILendingPoolAddressesProvider.sol';
 
 contract Aggregator is VersionedInitializable, SturdyERC4626, ReentrancyGuard {
   using SafeERC20 for IERC20;
@@ -284,11 +284,11 @@ contract Aggregator is VersionedInitializable, SturdyERC4626, ReentrancyGuard {
   /**
    * @dev Estimates highest and lowest apr lenders. 
    *      Public for debugging purposes but not much use to general public.
-   * @return the lowest lender index.
-   * @return the lowest APR value.
-   * @return the highest lender index.
-   * @return the potential APR after deposit to highest lender.
-   * @return the amount of adjusting position.
+   * @return _lowest the lowest lender index.
+   * @return _lowestApr the lowest APR value.
+   * @return _highest the highest lender index.
+   * @return _potential the potential APR after deposit to highest lender.
+   * @return _adjustPositionAmount the amount of adjusting position.
    */
 
   function estimateAdjustPosition()
